@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#111111"/>
+      <stop offset="40%" style="stop-color:#141414"/>
+      <stop offset="100%" style="stop-color:#0e0e0e"/>
+    </linearGradient>
+
+    <!-- Accent: sophisticated teal-green -->
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5bb5a2"/>
+      <stop offset="100%" style="stop-color:#3d9b8f"/>
+    </linearGradient>
+
+    <!-- Secondary warm accent -->
+    <linearGradient id="warm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4a06a"/>
+      <stop offset="100%" style="stop-color:#c48d55"/>
+    </linearGradient>
+
+    <!-- Soft glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feComposite in="blur" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Fine grain -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.035"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+
+    <!-- Subtle cross pattern -->
+    <pattern id="crosshatch" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.4" fill="#5bb5a2" opacity="0.08"/>
+    </pattern>
+
+    <style>
+      @keyframes fadeSlideRight {
+        from { opacity: 0; transform: translateX(-40px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes drawLine {
+        from { stroke-dashoffset: 600; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes drawShort {
+        from { stroke-dashoffset: 140; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes breathe {
+        0%, 100% { opacity: 0.035; }
+        50% { opacity: 0.07; }
+      }
+      @keyframes expandDot {
+        from { r: 0; opacity: 0; }
+        to { r: 3.5; opacity: 1; }
+      }
+
+      .greeting { opacity: 0; animation: fadeSlideRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards; }
+      .name { opacity: 0; animation: fadeSlideRight 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards; }
+      .desc-line1 { opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1s forwards; }
+      .desc-line2 { opacity: 0; animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards; }
+      .tag { opacity: 0; animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+      .t1 { animation-delay: 1.5s; }
+      .t2 { animation-delay: 1.65s; }
+      .t3 { animation-delay: 1.8s; }
+      .accent-v {
+        stroke-dasharray: 140;
+        stroke-dashoffset: 140;
+        animation: drawShort 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+      }
+      .accent-h {
+        stroke-dasharray: 600;
+        stroke-dashoffset: 600;
+        animation: drawLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+      }
+      .orb1 { animation: breathe 7s ease-in-out infinite; }
+      .orb2 { animation: breathe 9s ease-in-out infinite 3s; }
+      .dot-anim { animation: expandDot 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+      .da1 { animation-delay: 1.5s; }
+      .da2 { animation-delay: 1.65s; }
+      .da3 { animation-delay: 1.8s; }
+    </style>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <rect width="1200" height="400" fill="url(#crosshatch)"/>
+  <rect width="1200" height="400" filter="url(#grain)" opacity="0.5"/>
+
+  <!-- Ambient glows -->
+  <ellipse class="orb1" cx="1000" cy="100" rx="250" ry="180" fill="#5bb5a2" opacity="0.035" filter="url(#glow)"/>
+  <ellipse class="orb2" cx="150" cy="350" rx="200" ry="150" fill="#d4a06a" opacity="0.025" filter="url(#glow)"/>
+
+  <!-- Top edge accent -->
+  <line class="accent-h" x1="0" y1="1" x2="1200" y2="1" stroke="url(#teal)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Left vertical accent bar -->
+  <line class="accent-v" x1="88" y1="80" x2="88" y2="215" stroke="url(#teal)" stroke-width="3" opacity="0.7"/>
+
+  <!-- Greeting -->
+  <text class="greeting" x="115" y="118" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" font-size="18" fill="#5bb5a2" letter-spacing="5" font-weight="400">
+    HI, I'M
+  </text>
+
+  <!-- Full name -->
+  <text class="name" x="115" y="175" font-family="'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif" font-size="56" fill="#f0ece4" font-weight="400" letter-spacing="-0.5">
+    Sneha Chelimilla
+  </text>
+
+  <!-- Horizontal divider -->
+  <line class="accent-h" x1="115" y1="205" x2="620" y2="205" stroke="#5bb5a2" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- Description line 1 -->
+  <text class="desc-line1" x="115" y="248" font-family="'Trebuchet MS', 'Lucida Sans', 'Gill Sans', sans-serif" font-size="16" fill="#9a9590" letter-spacing="0.5" font-weight="400">
+    Product &amp; Program Strategist with deep expertise in enterprise platforms,
+  </text>
+
+  <!-- Description line 2 -->
+  <text class="desc-line2" x="115" y="274" font-family="'Trebuchet MS', 'Lucida Sans', 'Gill Sans', sans-serif" font-size="16" fill="#9a9590" letter-spacing="0.5" font-weight="400">
+    AI-powered SaaS/PaaS products, and operational process design.
+  </text>
+
+
+
+  <!-- Decorative corner marks -->
+  <g opacity="0.12">
+    <line x1="1145" y1="345" x2="1172" y2="345" stroke="#5bb5a2" stroke-width="0.8"/>
+    <line x1="1172" y1="345" x2="1172" y2="372" stroke="#5bb5a2" stroke-width="0.8"/>
+    <line x1="28" y1="28" x2="55" y2="28" stroke="#5bb5a2" stroke-width="0.8"/>
+    <line x1="28" y1="28" x2="28" y2="55" stroke="#5bb5a2" stroke-width="0.8"/>
+  </g>
+
+  <!-- Right side — minimal geometric decoration -->
+  <g opacity="0.06">
+    <rect x="880" y="100" width="220" height="220" rx="110" fill="none" stroke="#5bb5a2" stroke-width="0.8"/>
+    <rect x="920" y="140" width="140" height="140" rx="70" fill="none" stroke="#5bb5a2" stroke-width="0.5"/>
+  </g>
+
+  <!-- Bottom edge accent -->
+  <line class="accent-h" x1="1200" y1="399" x2="0" y2="399" stroke="url(#teal)" stroke-width="2" opacity="0.5"/>
+</svg>
