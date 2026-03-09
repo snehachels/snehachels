@@ -1,3 +1,8 @@
+<div align="center">
+	<img src="https://raw.githubusercontent.com/snehachels/snehachels/master/header.svg" width="800" height="400">
+	<br>
+</div>
+
 # AI Engineer Portfolio Projects (2026)
 
 A collection of five production-grade AI engineering projects designed to build a standout portfolio for AI engineering roles in 2026. Based on guidance from an experienced AI engineer with backgrounds at Google, Microsoft, and IBM.
