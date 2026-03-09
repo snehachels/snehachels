@@ -1,7 +1,7 @@
 <div align="center">
 	<img src="https://raw.githubusercontent.com/snehachels/snehachels/master/header.svg" width="800" height="400">
 	<br>
-</div>
+</div> 
 
 
 I'm a Product manager who likes turning messy, ambiguous problems into things that actually work.
