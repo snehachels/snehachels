@@ -4,7 +4,7 @@
 </div> 
 
 
-I'm a STrategy and Operations expert who likes turning messy, ambiguous problems into things that actually work.
+I'm a Strategy and Operations expert who likes turning messy, ambiguous problems into things that actually work.
 
 I've spent the last 6+ years at the intersection of **product, operations, and AI** — building data products at Mercedes-Benz, shipping AI automation tools at PwC's Strategy&, and running 0→1 initiatives at an AI logistics startup. The common thread: I find broken workflows, figure out what's really going on, and build systems that fix them.
 
